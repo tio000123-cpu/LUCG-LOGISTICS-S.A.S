@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCG LOGÍSTICS - Conectamos Urabá con el mundo</title>
+    <!-- Enlazamos tu archivo CSS -->
+    <link rel="stylesheet" href="style.css"> 
+    <!-- Iconos de Font Awesome para WhatsApp y teléfono -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Fuente Montserrat de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ESTILOS AGREGADOS PARA LAS SECCIONES MODIFICADAS */
+
+        /* ===== SECCIÓN COBERTURA - DISEÑO PROFESIONAL ===== */
+        .coverage-section .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+        }
+
+        .coverage-section .coverage-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 12px;
+            background-color: #f8f9fa;
+            border-left: 5px solid;
+            transition: all 0.3s ease;
+        }
+
+        .coverage-section .coverage-item:hover {
+            background-color: #ffffff;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+        }
+
+        .coverage-item:nth-child(1) {
+            border-color: #3498db;
+        }
+
+        .coverage-item:nth-child(2) {
+            border-color: #27ae60;
+        }
+
+        .coverage-item:nth-child(3) {
+            border-color: #9b59b6;
+        }
+
+        .coverage-item:nth-child(4) {
+            border-color: #e67e22;
+        }
+
+        .coverage-item .icon-box {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 36px;
+            color: #ffffff;
+        }
+
+        .coverage-item:nth-child(1) .icon-box {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .coverage-item:nth-child(2) .icon-box {
+            background: linear-gradient(135deg, #27ae60, #229954);
+        }
+
+        .coverage-item:nth-child(3) .icon-box {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        }
+
+        .coverage-item:nth-child(4) .icon-box {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+        }
+
+        .coverage-item h3 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .coverage-item p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* ===== SECCIÓN NOSOTROS - MISIÓN, VISIÓN Y VALORES ===== */
+        .about-us-section .mision-vision-valores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .mvv-card {
+            background: #ffffff;
+            padding: 35px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mvv-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #fff;
+        }
+
+        .mision .mvv-icon {
+            background-color: #3498db;
+        }
+
+        .vision .mvv-icon {
+            background-color: #27ae60;
+        }
+
+        .valores .mvv-icon {
+            background-color: #e67e22;
+        }
+
+        .mvv-card h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .mvv-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ===== SECCIÓN CONTACTO - NUEVO DISEÑO TARJETAS ===== */
+        #contacto {
+            background-color: #FFFFFF;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        #contacto .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        #contacto .section-tag {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #FF6600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        #contacto h2 {
+            font-size: 3em;
+            font-weight: 800;
+            color: #0A2241;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        
+        #contacto h2 span {
+            display: none;
+        }
+
+        #contacto .divider {
+            width: 70px;
+            height: 4px;
+            background-color: #FF6600;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        #contacto p {
+            font-size: 1.2em;
+            color: #555555;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            line-height: 1.8;
+        }
+
+        /* Contenedor de las tarjetas */
+        .contact-cards-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        /* Estilo de cada tarjeta */
+        .contact-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Decoración de esquinas (Azul arriba izquierda - Naranja abajo derecha) */
+        .corner-decoration {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+        }
+
+        .top-left {
+            top: 0;
+            left: 0;
+            background-color: #0A2241;
+            border-bottom-right-radius: 12px;
+        }
+
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            background-color: #FF6600;
+            border-top-left-radius: 12px;
+        }
+
+        /* Iconos */
+        .card-icon {
+            font-size: 28px;
+            color: #0A2241;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Contenido de texto */
+        .card-content h3 {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-data {
+            font-size: 1em;
+            color: #333333;
+            text-decoration: none;
+            font-weight: 500;
+            line-height: 1.5;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-data:hover {
+            color: #FF6600;
+            text-decoration: underline;
+        }
+
+        /* Responsivo para móviles */
+        @media (max-width: 768px) {
+            #contacto h2 {
+                font-size: 2.2em;
+            }
+            .contact-cards-container {
+                gap: 25px;
+            }
+        }
+
+        /* ===== ESTILOS DEL FOOTER CORREGIDOS ===== */
+        footer {
+            width: 100% !important;
+            background-color: #1a2b4a !important;
+            margin: 0 !important;
+            padding: 40px 0 20px !important;
+            font-family: 'Montserrat', sans-serif !important;
+            color: #ffffff !important;
+            box-sizing: border-box !important;
+            position: relative !important;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 25px;
+        }
+        .footer-col h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+        .footer-col h4.color1 { color: #ffb74d; }
+        .footer-col h4.color2 { color: #ffb74d; }
+        .footer-col p, .footer-col a {
+            color: #e0e0e0;
+            font-size: 15px;
+            line-height: 1.7;
+            text-decoration: none;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+        .redes-footer {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .redes-footer a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .linea-footer {
+            width: 100%;
+            height: 1px;
+            background: rgba(10, 151, 216, 0.527);
+            margin: 20px 0;
+        }
+        .copyright {
+            text-align: center;
+            color: #cccccc;
+            font-size: 14px;
+        }
+        .copyright p:last-child {
+            font-size: 13px;
+            color: #aaaaaa;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="img/logo_lucg_logistics.png" alt="Logo de LUCG LOGÍSTICS - Tu Carga en Manos Expertas">
+                <span class="header-company-name"></span>
+            </div>  
+
+            <ul>
+                <li><a href="#inicio" class="active">INICIO</a></li>
+                <li><a href="#nosotros">NOSOTROS</a></li>
+                <li><a href="#servicios">SERVICIOS</a></li>
+                <li><a href="#cobertura">COBERTURA</a></li> 
+                <li><a href="#contacto">CONTACTO</a></li>
+                <li><a href="pagina-blog-completa.html">BLOG</a></li>
+            </ul>
+
+            <a href="https://wa.me/573233705702" target="_blank" class="btn-header-cotizar">
+                <i class="fab fa-whatsapp"></i> COTIZAR AHORA
+            </a>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container hero-content-wrapper">
+                <div class="hero-content">
+                    <h2>Logística que mueve tu empresa <span class="highlight">hacia adelante</span></h2>
+                    <p>Soluciones integrales en almacenamiento, transporte y distribución en Urabá. Más control, más seguridad, mejores resultados.</p>
+                    <div class="buttons-container">
+                        <a href="https://wa.me/573233705702" target="_blank" class="btn whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> COTIZAR POR WHATSAPP
+                        </a>
+                        <a href="tel:+573233705702" class="btn call-btn">
+                            <i class="fas fa-phone-alt"></i> LLAMAR AHORA
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ventajas">
+            <div class="container">
+                <div class="ventajas-grid">
+                    <div class="ventaja-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>SEGURIDAD</h3>
+                        <p>Protegemos tu carga en cada paso.</p>
+                    </div>
+                    <div class="ventaja-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>RAPIDEZ</h3>
+                        <p>Entregas eficientes y a tiempo.</p>
+                    </div>
+                    <div class="ventaja-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>COBERTURA</h3>
+                        <p>Llegamos a todo Urabá y más.</p>
+                    </div>
+                    <div class="ventaja-item">
+                        <i class="fas fa-handshake"></i>
+                        <h3>CONFIANZA</h3>
+                        <p>Comprometidos con tu negocio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios">
+            <div class="container">
+                <p class="section-tag">NUESTROS SERVICIOS</p>
+                <h2>Soluciones logísticas para cada necesidad<span></span></h2>
+                <div class="servicios-grid">
+                    <div class="servicio-item-card">
+                        <i class="fas fa-warehouse"></i>
+                        <h3>Almacenamiento</h3>
+                        <p>Bodegas seguras y adaptadas a tus necesidades.</p>
+                    </div>
+                    <div class="servicio-item-card">
+                        <i class="fas fa-truck-moving"></i>
+                        <h3>Transporte</h3>
+                        <p>Transporte terrestre confiable y seguro.</p>
+                    </div>
+                    <div class="servicio-item-card">
+                        <i class="fas fa-box-open"></i>
+                        <h3>Distribución</h3>
+                        <p>Distribución ágil y eficiente para tu negocio.</p>
+                    </div>
+                    <div class="servicio-item-card">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Otros Servicios Logistico</h3>
+                        <p>Soluciones completas para optimizar tu cadena logística.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cobertura" class="coverage-section">
+            <div class="container">
+                <p class="section-tag">NUESTRA COBERTURA</p>
+                <h2>Llegamos donde tú estás<span></span></h2>
+                <p class="section-description">En LUCG LOGÍSTICS S.A.S conectamos el territorio de Urabá con el resto de Colombia y el mundo, garantizando que tu mercancía llegue a su destino de manera segura y puntual.</p>
+                
+                <div class="coverage-grid">
+                    <div class="coverage-item">
+                        <div class="icon-box">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Región de Urabá</h3>
+                        <p>Cubrimos todos los municipios de la región: Apartadó, Turbo, Chigorodó, Carepa, Mutatá, Necoclí y más.</p>
+                    </div>
+                    <div class="coverage-item">
+                        <div class="icon-box">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3>Nivel Nacional</h3>
+                        <p>Llevamos tu carga a las principales ciudades de Colombia: Medellín, Bogotá, Cali, Barranquilla, Cartagena y todo el territorio nacional.</p>
+                    </div>
+                    <div class="coverage-item">
+                        <div class="icon-box">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Nivel Internacional</h3>
+                        <p>Contamos con alianzas estratégicas para gestionar el transporte de mercancías hacia países de América y el resto del mundo.</p>
+                    </div>
+                    <div class="coverage-item">
+                        <div class="icon-box">
+                            <i class="fas fa-traffic-light"></i>
+                        </div>
+                        <h3>Rutas Especializadas</h3>
+                        <p>Contamos con rutas diseñadas para garantizar la eficiencia en los tiempos de entrega y la seguridad de tus productos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="nosotros" class="about-us-section">
+    <div class="container">
+        <h2 class="section-title">NOSOTROS <span class="highlight"></span></h2>
+        <p class="section-description">LUCG LOGISTICS S.A.S</p>
+        <p class="section-description">Somos una empresa dedicada a ofrecer soluciones logísticas integrales. Nuestra misión es conectar Urabá con el mundo, optimizando las cadenas de suministro de nuestros clientes a través de servicios eficientes y confiables.</p>
+
+        <!-- SECCIÓN MISIÓN, VISIÓN Y VALORES AGREGADA -->
+        <div class="mision-vision-valores">
+            <div class="mvv-card mision">
+                <div class="mvv-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Misión</h3>
+                <p>Brindar soluciones logísticas integrales, seguras y eficientes, conectando el territorio de Urabá con el resto de Colombia y el mundo, garantizando la satisfacción y tranquilidad de nuestros clientes.</p>
+            </div>
+
+            <div class="mvv-card vision">
+                <div class="mvv-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Visión</h3>
+                <p>Ser la empresa líder y referente en servicios logísticos en la región de Urabá y a nivel nacional, reconocida por nuestra excelencia, innovación y compromiso con la calidad y el desarrollo económico.</p>
+            </div>
+
+            <div class="mvv-card valores">
+                <div class="mvv-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3>Valores</h3>
+                <p>Responsabilidad, honestidad, seguridad, puntualidad, trabajo en equipo, respeto, compromiso, calidad y servicio al cliente son los principios que guían cada una de nuestras acciones.</p>
+            </div>
+        </div>
+        <!-- FIN SECCIÓN MISIÓN, VISIÓN Y VALORES -->
+
+        <div class="about-us-grid">
+              <div class="about-us-item">
+                <i class="fas fa-building"></i>
+                <h3>Razón Social</h3>
+                <p>LOGISTICA URABA CONECTA GLOBAL</p>
+            </div>
+            <div class="about-us-item">
+                <i class="fas fa-truck-moving"></i>
+                <h3>Nombre Comercial</h3>
+                <p>LUCG LOGISTICS S.A.S</p>
+            </div>
+            <div class="about-us-item">
+                <i class="fas fa-tag"></i>
+                <h3>Sigla</h3>
+                <p>LUCG LOGISTICS S.A.S</p>
+            </div>
+            <div class="about-us-item">
+                <i class="fas fa-id-card"></i>
+                <h3>NIT</h3>
+                <p>902054935-5</p>
+            </div>
+            <div class="about-us-item">
+                <i class="fas fa-handshake"></i>
+                <h3>Tipo de Empresa</h3>
+                <p>Sociedad por Acciones Simplificada (S.A.S)</p>
+            </div>
+            <div class="about-us-item">
+                <i class="fas fa-globe-americas"></i>
+                <h3>Alcance Geográfico</h3>
+                <p>Nacional e Internacional (Urabá y el mundo)</p>
+            </div>
+        </div>
+
+        <p class="about-us-statement">En LUCG LOGISTICS, nos comprometemos con la excelencia, la innovación y la satisfacción total de nuestros clientes. Buscamos ser el aliado estratégico que impulse el crecimiento</p>
+    </div>
+</section>
+
+<!-- SECCIÓN CONTACTO ACTUALIZADA CON EL DISEÑO QUE TE GUSTÓ -->
+<section id="contacto">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Contáctanos</span>
+            <h2>Estamos a tu Servicio</h2>
+            <div class="divider"></div>
+        </div>
+        <p>¿Listo para optimizar tu logística? Contáctanos y te ayudaremos a conectar Urabá con el mundo.</p>
+        
+        <div class="contact-cards-container">
+            <!-- Tarjeta Teléfono / WhatsApp -->
+            <div class="contact-card">
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+                <div class="card-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Teléfono / WhatsApp:</h3>
+                    <a href="https://wa.me/573233705702" target="_blank" class="contact-data">323 370 5702</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta Correo Electrónico -->
+            <div class="contact-card">
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+                <div class="card-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Correo Electrónico:</h3>
+                    <a href="mailto:gerente.lucglogistics@gmail.com" class="contact-data">gerente.lucglogistics@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta Dirección -->
+<div class="contact-card">
+    <div class="corner-decoration top-left"></div>
+    <div class="corner-decoration bottom-right"></div>
+    <div class="card-icon">
+        <i class="fas fa-map-marker-alt"></i>
+    </div>
+    <div class="card-content">
+        <h3>Dirección:</h3>
+        <p class="contact-data">
+            Calle 91 # 114A-8, Barrio El Salvador,<br>
+            Apartadó, Urabá - Antioquia Colombia
+        </p>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+<!-- ===== FOOTER CORREGIDO: CUBRE TODA LA PANTALLA ===== -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- Columna 1: LUCG LOGÍSTICS -->
+            <div class="footer-col">
+                <h4 class="color1">LUCG LOGÍSTICS</h4>
+                <p>Tu carga en manos expertas. Soluciones logísticas seguras, rápidas y eficientes en todo Colombia.</p>
+                <div class="redes-footer">
+                    <a href="https://www.facebook.com/share/1DBeSaqADN/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/lucg_logistics?igsh=MXU0aXU2eHBqNGMxMA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@lucglogistics?_r=1&_t=ZS-9712QpLlapl" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Enlaces rápidos -->
+            <div class="footer-col">
+                <h4 class="color2">Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="pagina-blog-completa.html">Blog</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Contacto -->
+            <div class="footer-col">
+                <h4 class="color2">Contacto</h4>
+                <p>
+                    <i class="fab fa-whatsapp"></i> +57 323 370 5702<br>
+                    <i class="fas fa-envelope"></i> gerente.lucglogistics@gmail.com<br>
+                    <i class="fas fa-map-marker-alt"></i> Apartado, Antioquia
+                </p>
+            </div>
+        </div>
+
+        <!-- Línea separadora -->
+        <div class="linea-footer"></div>
+
+        <!-- Copyright y NIT -->
+        <div class="copyright">
+            <p>© 2026 LUCG LOGÍSTICS S.A.S - Todos los derechos reservados</p>
+            <p>NIT. 902054935-5</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
